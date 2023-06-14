@@ -220,9 +220,103 @@ QMenu::item:selected {
 }
 ```
 
-There's a bit more going on here. I've selected the 'Documents' tab. Each option within the dropdown is called an item. Unhovered and left alone, you can see they are all white (rgba(255,255,255,130)) with red borders (rgba(255,0,0,130)). The ones with green text (rgba(0,255,0,130)) are 'disabled' items, meaning they cannot be clicked on for some reason or another. Finally, I have my mouse hovering over the 'Snapshots' item, highlighting it cyan (rgba(0,255,255,130)) and giving it a blue border (rgab(0,0,255,130)).
+There's a bit more going on here. I've selected the 'Documents' tab. Each option within the dropdown is called an item. Unhovered and left alone, you can see they are all white (rgba(255,255,255,130)) with red borders (rgba(255,0,0,130)). The ones with green text (rgba(0,255,0,130)) are 'disabled' items, meaning they cannot be clicked on for some reason or another. Finally, I have my mouse hovering over the 'Snapshots' item, highlighting it cyan (rgba(0,255,255,130)) and giving it a blue border (rgba(0,0,255,130)).
 
+![menu icon checked](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/e78e57dc-d202-45ec-9f42-dbf4d97645db)
 
+```
+QMenu::icon:checked {
+    
+    background-color: rgba(255,0,0,130);
+    
+    background: rgba(0,0,255,130);
+    
+    border: 1px solid rgba(0,255,0,130);
+    
+    border-radius: 2px;
 
+}
+```
 
+Here, I've selected the 'Format' tab and the 'Paragraph' item. Since the paragraph currently being modified is aligned left, that's the option that is checked, by being highlighted blue (rgba(0,0,255,130)) and outline in green (rgba(0,255,0,130)). The base .qss file actually uses `background-color` and not `background`, which didn't seem to change anything, hence why I added the `background` line above. If `background-color` were used and appeared somewhere, it would be red (rgba(255,0,0,130)).
+
+![right arrow](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/edf26110-d4e1-471c-9590-b863f881ccca)
+
+```
+QMenu::right-arrow {
+    
+    width: 10px;
+    
+    height: 10px;
+    
+    margin-right: 1px;
+    
+    background: rgba(0,0,255,130);
+    
+    border: 1px solid rgba(0,255,255,130);
+
+}
+```
+
+In the previous screenshots, you could see that the right arrows, such as in the `Format -> Paragraph` item, were little greater-than signs. By adding the background and border fields (which are not in the base .qss file), I've changed them to blue boxes outlined in cyan. [TK] I think you could also make this an image, if you want.
+
+![menu separator and indicator](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/121f734d-4f14-4c2d-9cad-6ae8c7debe33)
+
+```
+QMenu::separator {
+    
+    height: 1px;
+    
+    background: rgba(255,0,0,130);
+    
+    margin-left: 10px;
+    
+    margin-right: 10px;
+
+}
+
+QMenu::indicator {
+    
+    position: absolute!important;
+    
+    background-color: rgba(0,0,255,130);
+    
+    top: 2px!important;
+    
+    left: 2px!important;
+    
+    width: 13px!important;
+    
+    height: 13px!important;
+
+}
+```
+
+The red lines are the separators, and the blue boxes are the indicators (checkboxes of whether something is or is not selected).
+
+[TK] There are a bunch of images for indicators, which should probably be customizable, but I'm not certain at the moment where the resources folder is to *put* those images, so I'm going to skip that section for now.
+
+![main window separator](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/fe96f12e-3313-4f7b-84df-a6a3d29225a9)
+
+```
+QMainWindow::separator {
+    
+    width: 6px;
+    
+    height: 5px;
+    
+    padding: 2px;
+
+}
+
+QMainWindow::separator:hover,
+
+QSplitter::handle:hover {
+    
+    background: rgba(0,255,255,130);
+
+}
+```
+
+If you look at the right edge of the binder scrollbar, you will see a cyan line running along it (rgba(0,255,255,130)). This is the bar that appears when you hover over that edge to click and drag, for resizing the binder. The same color would appear at the left edge of the inspector, and if you have two documents open at once in split view, you will also find a cyan line when resizing those. [TK] I have no idea what the main window separator is.
 
