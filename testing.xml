@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerThemes>
-    <ScrivenerTheme name="testing" style="Default">
-        <qtstylesheet>testing.qss</qtstylesheet>
-        <palette>testing.pal</palette>
-        <preferences load="Colors">testing.prefs</preferences>
-    </ScrivenerTheme>
-</ScrivenerThemes>
