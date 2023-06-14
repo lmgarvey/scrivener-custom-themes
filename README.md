@@ -3,6 +3,13 @@
 
 Fair word of warning, this is a work in progress, and there are some things I've yet to figure out. Those will be labeled [TK], so I can search for them as I come across new information.
 
+For your reference in this repo:
+- testing.scrtheme is an eye-straining theme, intended to show off where certain colors land from the palette file. It contains the following four files:
+- testing.pal is the palette file
+- testing.prefs is the preferences file
+- testing.qss is for the appearance of GUI elements (things you can interact with)
+- testing.xml defines the previous three, so Scrivener knows what things to use when showing off your theme
+
 Easiest way to customize your layout:
 - `File -> Options -> Appearance`, go nuts! There are some things that cannot be modified like this, though - the main bar, that small left edge of the binder where the dropdown arrows are, that sort of thing.
 
