@@ -1,6 +1,8 @@
 # scrivener-custom-themes
 (Specifically for the Windows desktop app) I couldn't find an easy reference for what certain colors and sections were when trying to customize my layout, so I decided to make one!
 
+[TK] at the beginning of a line means that section is incomplete, and I want to be able to find it later on.
+
 Easiest way to customize your layout:
 - `File -> Options -> Appearance`, go nuts! There are some things that cannot be modified like this, though - the main bar, that small left edge of the binder where the dropdown arrows are, that sort of thing.
 
@@ -12,7 +14,7 @@ More involved way to customize your layout:
 
 The hard way (what we're doing (don't worry, it's not that hard (because I'm doing the hard part for both of us))):
 - To start, you'll need a .scrtheme file, since we mess with colors by modifying .qss and .pal files. These can be found a couple of ways: either download the .scrtheme file I have in this repo, or do `Window -> Themes -> Save Theme to File`. The latter of these will require you having selected a different theme than the default, but the former is pretty simple, anyway.
-- To be able to modify those files, you'll want to change the file extension - eg, for my purposes, I would rename `solalight.scrtheme` to `solalight.zip`. This usually gives me a warning about changing the extension, but that's fine.
+- To be able to modify those files, you'll want to change the file extension - eg, for my purposes, I would rename `solalight.scrtheme` to `solalight.zip` (though I've included both in this repo for you). This usually gives me a warning about changing the extension, but that's fine.
 - Extract the files to wherever you'd like. There should be four in there:
   - solalight.pal   <-- This is your palette file. Naming colors in here allows you to call on them in the .qss file, eg `background-color: palette(some-color)`.
   - solalight.prefs   <-- This is for your personal preferences. For example, it includes the line `AutoCorrection\capitalizeI=false`, meaning that typing the letter 'i' by itself will not automatically capitalize it. We won't be touching this.
@@ -39,7 +41,8 @@ As seen above, there's some splashes of red now. That is because I went into `so
 
 If you check out the `solalight.qss` file, you will notice the following snippet:
 
-`QToolTip {
+```
+QToolTip {
 
     color: palette(text);
     
@@ -49,11 +52,13 @@ If you check out the `solalight.qss` file, you will notice the following snippet
     
     border-radius: 4px;
     
-}`
+}
+```
 
 Tool tips are the little boxes that pop up when you hover over certain documents and icons, describing what they are or what they do. Shown above is a tool tip from hovering over 'The Basics' folder. Because QToolTip calls `palette(base)` when defining its background color, it uses that modified `Base(255,0,0)` that I changed in the palette file. If I go in and manually change that code to be:
 
-`QToolTip {
+```
+QToolTip {
 
     color: palette(text);
     
@@ -63,7 +68,8 @@ Tool tips are the little boxes that pop up when you hover over certain documents
     
     border-radius: 4px;
     
-}`
+}
+```
 
 we will now see a different color tool tip box:
 
@@ -75,5 +81,148 @@ Notice that while the tool tip box is now green, the other spots of red stayed. 
 
 In this way, you could poke around and figure out what colors map to where, but doing it one at a time, then zipping up the files, restarting Scrivener, and searching for where they popped up is tedious (just trust me on this one). You could also revamp the whole theme at once, instead of specifics, by just changing the color values in the `solalight.pal` file, as demonstrated above.
 
-To save you the trouble, I'm going to try to define each of the entries in the `solalight.qss` file, so you know what changes where.
+To save you the trouble, I'm going to try to define each of the entries in the `solalight.qss` file, so you know what changes where. This will be done by returning `solalight.pal` and `solalight.qss` to their initial states, as shown first and as included in this repo. Then I'll go through `solalight.qss` and make one item at a time be very bright colors, paired with a screenshot of where the item/color can be found. Ready? Let's-a go!
+
+```
+QToolTip {
+
+    color: palette(text);
+
+    background-color: palette(base);
+    
+    border: 1px solid palette(dark);
+    
+    border-radius: 4px;
+
+}
+```
+
+We saw this before - tool tips appear when you hover over something with your mouse. 'color' is the color of the text in the box, 'background-color' is the color of the whole box, and 'border' is the color running along the edge of the box.
+
+```
+QStatusBar {
+    
+    background-color: palette(alternate-base);
+    
+    color: palette(mid);
+
+}
+```
+
+[TK] Supposedly, this should be the bar along the very bottom, where you can see a document's word count, set word or character count targets, and set the status of a document or project. I cannot seem to change it, so we're moving on. (my guess is it comes from something to do with the .prefs file)
+
+![green menu bar border](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/ba6d85f1-462f-479e-be10-09f53222f29c)
+
+```
+QMenuBar {
+    
+    background-color: rgba(255,0,0,130);
+    
+    border-bottom: 2px solid rgba(0,255,0,130);
+
+}
+```
+
+The menu bar is that section along the top, with options like 'File', 'Edit', and 'Window', as well as the blank space between and past them. You can see here the bright green line running along the bottom of it - this is your `border-bottom`. [TK] The bar itself isn't red, which I again will assume is the fault of the .prefs file.
+
+![red menu bar items](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/a795b47e-fda8-4e34-916a-cfb59168318b)
+
+```
+QMenuBar::item {
+    
+    spacing: 2px;
+    
+    padding: 3px 4px;
+    
+    background: rgba(255,0,0,130);
+
+}
+```
+
+Menu bar items are the clickable options, eg 'File' and 'Edit.' In the included .qss file, background is set to 'transparent,' meaning that the items will match the color of the menu bar as set above. If you wanted them to stand out and be a different color, you would do it here.
+
+![menu bar item hovered](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/39c06088-b782-4951-a01c-a29fb3da5be8)
+
+```
+QMenuBar::item:selected {
+    
+    background-color: rgba(255,0,0,130);
+    
+    border-left: 1px solid rgba(0,255,0,130);
+    
+    border-right: 1px solid rgba(0,0,255,130);
+
+}
+```
+
+A 'selected' menu bar item just means that your mouse is hovering over it, without clicking the option. Shown here, I am hovering over the 'Help' option. If you look closely, you can also see that the left and right borders are different colors, too.
+
+![menu bar item clicked](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/1a920add-986f-4f23-9377-79a0aa21ab9c)
+
+```
+QMenuBar::item:pressed {
+    
+    background-color: rgba(255,0,0,130);
+    
+    border-left: 1px solid rgba(0,255,0,130);
+    
+    border-right: 1px solid rgba(0,0,255,130);
+
+}
+```
+
+A 'pressed' menu bar item is one that has been clicked, revealing its dropdown menu. Here, I've clicked the 'Help' option, and you can again see that the borders are different colors, too.
+
+![menu dropdown](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/4fe42548-9981-498d-b84d-4b446c02ca5b)
+![menu dropdown thick border](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/3c0a4868-be46-4b84-bdbf-70bec7693a4d)
+
+```
+QMenu {
+    
+    background-color: rgba(255,0,0,130);
+    
+    border: 1px solid rgba(0,255,0,130);
+
+}
+```
+
+A plain old 'Menu' is the dropdown that appears when you click an option. Here again, I've clicked the 'Help' option. The main color is red, and the edges are green. Just for fun, I've also included what it looks like if I change the border from 1px to 10px.
+
+![menu items](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/73f089e4-fea2-462c-bc1e-db4efbdba683)
+
+```
+QMenu::item {
+    
+    min-width: 120px !important;
+    
+    background: rgba(255,255,255,130);
+    
+    border: 1px solid rgb(255,0,0,130);
+    
+    padding: 1px 20px 1px 26px !important;
+    
+    margin: 1px !important;
+
+}
+
+QMenu::item:disabled {
+    
+    color: rgba(0,255,0,130);
+
+}
+
+QMenu::item:selected {
+    
+    border-color: rgba(0,0,255,130);
+    
+    background: rgba(0,255,255,130);
+
+}
+```
+
+There's a bit more going on here. I've selected the 'Documents' tab. Each option within the dropdown is called an item. Unhovered and left alone, you can see they are all white (rgba(255,255,255,130)) with red borders (rgba(255,0,0,130)). The ones with green text (rgba(0,255,0,130)) are 'disabled' items, meaning they cannot be clicked on for some reason or another. Finally, I have my mouse hovering over the 'Snapshots' item, highlighting it cyan (rgba(0,255,255,130)) and giving it a blue border (rgab(0,0,255,130)).
+
+
+
+
 
