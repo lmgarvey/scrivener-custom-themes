@@ -22,6 +22,8 @@ The hard way (what we're doing (don't worry, it's not that hard (because I'm doi
   - testing.xml   <-- This is the basic .xml file, which tells Scrivener where to find all the information and customization you've done. We won't be touching this.
 - Cool, we're ready to get started! Next, you'll want to boot up your favorite software for modifying .qss and .pal files (I'm using CLion because that's what they defaulted to, but any coding program should probably work. You could even use a Notepad if you wanted to).
 - From there, you can go off and change the colors to your heart's content. `testing.pal` is already commented with what things are (shoutout to the creators of the predefined themes for including those!), and I'm slowly working on adding similar comments to `testing.qss`.
+- Once you've changed everything as you wish (or when you want to check how things are looking), you'll want to take the four files and put them into a .scrtheme file. I've been doing this by selecting all four, compressing to a .zip file, then changing the file extension.
+  - If you're on Windows, make sure all four items make it into the .scrtheme file. Simply right-clicking the folder and selecting `Compress to zip file` seems to skip over the .xml file, which will not work. Selecting all four files inside the folder and compressing them does the trick.
 
 For a more in-depth look at which things are where, I'm going to start with `testing.pal`. If you wanted, you could skip this and directly modify colors in `testing.qss`, but that would lead to a similar issue as mentioned above, where certain things (which live in `testing.prefs`) wouldn't be modifiable.
 - To start, let's look at the eyesores that are the main window and the 'New Project' window, using the testing.scrtheme theme:
@@ -43,5 +45,26 @@ Things to note here:
 - The medium yellow text, such as that of 'Fiction' and 'Scriptwriting', is found in `testing.pal` by the name `Text(255,232,20)`
 - The bright green text, such as that of 'Getting Started' on the 'New Project' window and the 'Help' menu option in the main window, are found in `testing.pal` by the name `ButtonText(209,255,153)`
 - The purple highlight over the 'Help' menu option is found in `testing.pal` by the name `Midlight(184,71,245)`
+
+Now, on to the specifics of the .qss file! I've changed the overall theme to 'Grey Matter Light,' so it's easier to see what I'm talking about.
+
+![image](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/d71828d6-a8ab-4eaa-bea8-9316159eff1e)
+- First up, `QToolTip`: tool tips are the little info boxes that pop up to describe what something does (a folder, adding an item). In the image above, red is the `color` field (the text color), and green is the `background-color` field
+- Next, `QStatusBar`: [TK] I haven't figured this one out yet ngl
+
+![image](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/b2a774e4-5dd0-44ae-a19a-d9870a8fccbf)
+
+![image](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/fdb71988-ed6c-4268-b1b6-e88aa02a052f)
+- Next, `QMenuBar`: this is your main hub along the top of the screen. The bright green color of the tabs is from the `QMenuBar::item` `background` field. The dark blue over the 'Navigate' tab is from the `QMenuBar::item:selected` `background-color` field, and is achieved by *hovering* over the tab. The cyan over the 'Navigate' tab is from the `QMenuBar::item:pressed` `background-color` field.
+- [TK] I have no idea where `QMenuBar` comes into play.
+
+![image](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/6c9cebd5-67e5-4313-a600-0d00f2615a62)
+- Pictured above is the dropdown menu from 'File'. The red is from the `QMenu` `background-color` field. The green text is from the `QMenu::item:disabled` `color` field, and represents something that can't currently be clicked. The cyan is from the `QMenu::item:selected` `background` field, and comes from hovering over that option.
+
+![image](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/a5e1e357-2263-4557-bc66-4a0b1ded2d3e)
+- Pictured above is the dropdown menu from 'File'. The green separators are from the `QMenu::separator` `background` field. [TK] I want to say `QMenuBar` is the thicker bar, but that's not working right now, which I assume comes from something in the .prefs file.
+
+![image](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/926ffb55-1fe6-4f37-ab5d-ee8f45a7591a)
+- If you select `View -> Editor Layout -> Split Horizontally` (or Vertically), then try to resize the layout windows, the red line above is what you will see when dragging them. It is found under `QMainWindow::separator:hover` in the `background` field. Similarly, this is also the `QSplitter::handle:hover` `background` color, but [TK] I have yet to find that anywhere.
 
 
