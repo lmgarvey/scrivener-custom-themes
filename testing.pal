@@ -1,0 +1,79 @@
+// bright red
+Base(255,0,0) //Used mostly as the background color for text entry widgets, but can also be used as the background of combobox drop down lists and toolbar handles. It is usually white or another light color
+
+// dark red
+AlternateBase(191,31,31) //Used as the alternate background color in views with alternating row colors
+
+// light red
+Window(255,122,122) //A general background color
+
+// light orange
+ToolTipBase(255,199,150) //Used as the background color for ToolTip
+
+// med orange
+Button(255,129,18) //The general button background color
+
+// dark orange
+Highlight(207,96,0) //A background color to indicate a selected item or the current item
+
+
+
+//TEXTS
+// light yellow
+WindowText(255,246,163) //A general foreground color
+
+// med yellow
+Text(255,232,20) //The foreground color used with Base. This is usually the same as the WindowText, in which case it must provide good contrast with Window and Base
+
+// dark yellow
+BrightText(201,182,8) //A text color that is very different from WindowText, and contrasts well e.g. Dark. Typically used for text that needs to be drawn where Text or WindowText would give poor contrast, such as on pressed push buttons
+
+// light green
+ButtonText(209,255,153) //A foreground color used with the Button color
+
+// med green
+HighlightedText(162,255,48) //A text color that contrasts with Highlight
+
+// dark green
+ToolTipText(102,166,23) //Used as the foreground color for ToolTip
+
+// light blue
+PlaceholderText(150,236,255) //Used as the placeholder color for various text input widgets
+
+// med blue
+Link(15,203,245) //A text color used for unvisited hyperlinks
+
+// dark blue
+LinkVisited(47,113,212) //A text color used for already visited hyperlinks
+
+
+
+
+//BASE PALETTE SHADES
+
+// light purple
+Light(227,209,255) //Lighter than Button color
+
+// med purple
+Midlight(184,71,245) //Between Button and Light
+
+// dark purple
+Mid(128,31,181) //Between Button and Dark
+
+// light pink
+Dark(255,176,246) //Darker than Button
+
+// med pink
+Shadow(255,54,231) //very dark color i.e. black
+
+
+
+
+//DISABLED
+
+// med grey
+WindowText:Disabled(187,187,187)
+Text:Disabled(187,187,187)
+Text:Disabled(187,187,187)
+ButtonText:Disabled(187,187,187)
+Highlight:Disabled(187,187,187)
