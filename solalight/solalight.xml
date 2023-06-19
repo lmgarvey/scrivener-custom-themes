@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrivenerThemes>
+    <ScrivenerTheme name="solalight" style="Default">
+        <qtstylesheet>solalight.qss</qtstylesheet>
+        <palette>solalight.pal</palette>
+        <preferences load="Colors">solalight.prefs</preferences>
+    </ScrivenerTheme>
+</ScrivenerThemes>
