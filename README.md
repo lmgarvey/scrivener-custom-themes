@@ -320,3 +320,9 @@ QSplitter::handle:hover {
 
 If you look at the right edge of the binder scrollbar, you will see a cyan line running along it (rgba(0,255,255,130)). This is the bar that appears when you hover over that edge to click and drag, for resizing the binder. The same color would appear at the left edge of the inspector, and if you have two documents open at once in split view, you will also find a cyan line when resizing those. [TK] I have no idea what the main window separator is.
 
+[TK] idk where this should go wrt the rest of the qss file so i'm putting it here. You can also change the icons directly in Scrivener, such as the little blue folder beside the 'Get Oriented' folder. [This](https://www.jenterpstra.com/blog/custom-scrivener-binder-icons-tutorial) page goes more in-depth, but the basic idea is to right-click the icon you wish to change, select 'Change Icon', and then either select an icon from text, or import an icon image you wish to use. The former would ideally use single characters, or else very short phrases if your screen allows for that. The latter is the more customizable version. I downloaded a 100x100 png of a fox and, using the latter method to select the image, used it to change the [icon](https://www.vexels.com/png-svg/preview/151733/cute-fox-cartoon-design) of my 'Get Oriented' folder:
+
+![main page with a fox icon](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/90d5f440-7b96-45db-9030-f3dce1e7a360)
+
+
+As you can see, I now have a cute little fox instead of that blue folder icon. I added it using 'Manage Icons...', then selected it from the dropdown list of possible icons. [TK] There might be a more direct way to do this in the qss or prefs folder, where replacing 'Generic blue folder' with 'cute little fox' in one spot will make that fox appear as the relevant icon across all folders in the project with this theme, but i haven't found it (nor have i looked, tbh).
