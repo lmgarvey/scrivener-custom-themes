@@ -318,8 +318,7 @@ QTreeView::branch:selected:!active {
 
 QTreeView::item:selected:active,
 QTreeView::item:selected:!active {
-    background: rgba(209, 203, 184, 130);
-    /*palette(highlight)*/
+    palette(highlight)
 }
 
 QTreeView::branch:has-siblings:!adjoins-item {
