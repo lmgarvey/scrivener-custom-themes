@@ -25,6 +25,7 @@ The hard way (what we're doing (don't worry, it's not that hard (because I'm doi
 - Once you've changed everything as you wish (or when you want to check how things are looking), you'll take the four files and put them into a .scrtheme file. I've been doing this by selecting all four, compressing to a .zip file, then changing the file extension.
   - If you're on Windows, make sure all four items make it into the .scrtheme file. Simply right-clicking the folder and selecting `Compress to zip file` seems to skip over the .xml file, which will not work. Selecting all four files inside the folder and compressing them does the trick.
 - When you have that .scrtheme file ready to go, just load it into Scrivener and restart the program to see your theme! See the 'More involved way to customize your layout' section above for a description on how to do this.
+- Note that, if you want to change your theme *name,* you'll also want to do this in the files - rename them from 'solalight.\*' to '[your theme name].\*,' and also edit the same in solalight.xml.
 
 
 Now let's get into the weeds of the hard way. To start, here is the predefined 'Solarized Light' theme, as well as its color palette:
@@ -326,3 +327,8 @@ If you look at the right edge of the binder scrollbar, you will see a cyan line 
 
 
 As you can see, I now have a cute little fox instead of that blue folder icon. I added it using 'Manage Icons...', then selected it from the dropdown list of possible icons. [TK] There might be a more direct way to do this in the qss or prefs folder, where replacing 'Generic blue folder' with 'cute little fox' in one spot will make that fox appear as the relevant icon across all folders in the project with this theme, but i haven't found it (nor have i looked, tbh).
+
+![yellow and pink theme](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/6c9b22e6-3c52-474d-a81a-e40f1fa104cf)
+
+Putting it all together, here's a very simple yellow and pink theme! You can find all the files in the YaP folder in this repo. I only changed the YaP.pal file, and the fox icon carried over for a reason of which I'm not entirely sure.
+
