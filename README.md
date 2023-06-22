@@ -334,5 +334,6 @@ Putting it all together, here's a very simple yellow and pink theme! You can fin
 - Most of the colors in the YaP.pal file. I left alone the text and disabled colors.
 - The corkboard background. This is done with `File -> Options -> Appearance -> Corkboard -> Colors`, then selecting the 'Custom background' option. I just downloaded a png I liked that felt like it matched the theme, and selected it with the pop-up window on selecting the 'Custom background' option.
 - The binder background. This is done with `File -> Options -> Appearance -> Binder -> Colors`, then setting the color to be the same as the `Base` color in the YaP.pal file.
+- The main editor fixed width background. This is done with `File -> Options -> Appearance -> Main Editor -> Colors -> Fixed width background`, and I set the color to be the same as that of the Editor, two lines above where 'fixed width' is. If you look at the very first image in this README, you'll see that the left and right edges of the center chunk are different colors than that behind the body text. That comes from the 'fixed width background' color being different than the 'editor' color.
 - You might have noticed that the fox icon stuck around - I have no idea why this is, but I think it's cute, so I kept it.
 
