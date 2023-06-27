@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerThemes>
-    <ScrivenerTheme name="YaP" style="Default">
-        <qtstylesheet>YaP.qss</qtstylesheet>
-        <palette>YaP.pal</palette>
-        <preferences load="Colors">YaP.prefs</preferences>
-    </ScrivenerTheme>
-</ScrivenerThemes>
