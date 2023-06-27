@@ -327,13 +327,14 @@ If you look at the right edge of the binder scrollbar, you will see a cyan line 
 
 As you can see, I now have a cute little fox instead of that blue folder icon. I added it using 'Manage Icons...', then selected it from the dropdown list of possible icons. [TK] There might be a more direct way to do this in the qss or prefs folder, where replacing 'Generic blue folder' with 'cute little fox' in one spot will make that fox appear as the relevant icon across all folders in the project with this theme, but i haven't found it (nor have i looked, tbh).
 
-![yellow and pink theme](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/ac24b5b9-e58a-407a-ad75-fc382424bb8f)
+![neapolitan theme](https://github.com/lmgarvey/scrivener-custom-themes/assets/94126547/074bcd30-7b2c-4daa-9036-ef4cc609349d)
 
-Putting it all together, here's a very simple yellow and pink theme! You can find all the files in the YaP folder in this repo. Here is what I changed:
 
-- Most of the colors in the YaP.pal file. I left alone the text and disabled colors.
+Putting it all together, here's a very simple neapolitan theme! You can find all the files in the neapolitan folder in this repo. Here is what I changed:
+
+- Most of the colors in the neapolitan.pal file. I left alone the text and disabled colors.
 - The corkboard background. This is done with `File -> Options -> Appearance -> Corkboard -> Colors`, then selecting the 'Custom background' option. I just downloaded a png I liked that felt like it matched the theme, and selected it with the pop-up window on selecting the 'Custom background' option.
-- The binder background. This is done with `File -> Options -> Appearance -> Binder -> Colors`, then setting the color to be the same as the `Base` color in the YaP.pal file.
+- The binder background. This is done with `File -> Options -> Appearance -> Binder -> Colors`, then setting the color to be the same as the `Base` color in the neapolitan.pal file.
 - The main editor fixed width background. This is done with `File -> Options -> Appearance -> Main Editor -> Colors -> Fixed width background`, and I set the color to be the same as that of the Editor, two lines above where 'fixed width' is. If you look at the very first image in this README, you'll see that the left and right edges of the center chunk are different colors than that behind the body text. That comes from the 'fixed width background' color being different than the 'editor' color.
 - You might have noticed that the fox icon stuck around - I have no idea why this is, but I think it's cute, so I kept it.
 
